@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-30
+
+### Added
+- `design-hunt` skill: hunts advanced web design templates across 8
+  reference sites — awwwards.com, dribbble.com, behance.net,
+  templatemonster.com, themeforest.net, framer.com/templates,
+  tailwindui.com, ui.shadcn.com — using the Playwright MCP browser.
+- Four modes: `inspiration` (browse trends), `extract` (pull
+  components/CSS), `screenshots` (save references to
+  `~/Desktop/design-references/<site>/<date>/`), `replicate` (rebuild
+  a seen design in the user's stack).
+- Auto-activates on "find design for X", "найди шаблон для Y",
+  "вытащи компонент с сайта", "реплицируй дизайн", or `/design-hunt`.
+- `reference.md` for `design-hunt`: per-site navigation tips, search
+  syntax, extraction JS snippets, viewport sizes, file naming, and
+  legal/ethical notes (paid vs open-source, inspired-by vs copy).
+
 ## [0.2.0] - 2026-07-30
 
 ### Added
@@ -39,6 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `LICENSE` (MIT).
 - `.gitignore`.
 
-[Unreleased]: https://github.com/viamagic333-lang/cursor-skills/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/viamagic333-lang/cursor-skills/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.3.0
 [0.2.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.2.0
 [0.1.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.1.0

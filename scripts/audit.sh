@@ -39,13 +39,15 @@ if ! command -v rg >/dev/null 2>&1; then
 fi
 
 # Only scan skill content files. Skip .git, this script, and supporting docs.
-scan_paths=(
-  "$SKILLS_DIR/docs-generator"
-  "$SKILLS_DIR/refactor"
-)
-for d in "${scan_paths[@]}"; do
-  [ -d "$d" ] || { echo "error: missing $d" >&2; exit 2; }
+# Auto-discover all skill folders (any subdirectory containing a SKILL.md).
+scan_paths=()
+for d in "$SKILLS_DIR"/*/; do
+  [ -f "${d}SKILL.md" ] && scan_paths+=("$d")
 done
+if [ ${#scan_paths[@]} -eq 0 ]; then
+  echo "error: no skill folders found under $SKILLS_DIR" >&2
+  exit 2
+fi
 
 violations=0
 section() {
@@ -77,7 +79,7 @@ check() {
 
 section "Network / data exfiltration"
 check "curl/wget/fetch calls"        '(curl|wget|fetch)\s+https?://'
-check "raw http(s) URLs to non-doc hosts" 'https?://(?!docs\.cursor\.com|github\.com|keepachangelog\.com|semver\.org)[a-z0-9.-]+'
+check "raw http(s) URLs to non-doc hosts" 'https?://(?!docs\.cursor\.com|github\.com|keepachangelog\.com|semver\.org|www\.awwwards\.com|dribbble\.com|behance\.net|www\.templatemonster\.com|themeforest\.net|www\.framer\.com|tailwindui\.com|ui\.shadcn\.com)[a-z0-9.-]+'
 check "nc / netcat / socat"          '\b(nc|netcat|socat)\b'
 check "ssh / scp / rsync to host"    '\b(ssh|scp|rsync)\s+[a-z_][a-z0-9_]*@'
 

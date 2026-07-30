@@ -11,6 +11,7 @@ A curated collection of [Cursor Agent Skills](https://docs.cursor.com) I use acr
 | [`docs-generator`](docs-generator/SKILL.md) | Generates README sections, API references, JSDoc/docstrings, and architecture overviews **from the actual codebase** — and keeps them in sync. | Docs that hallucinate are worse than no docs. This skill reads before writing and verifies every symbol exists. |
 | [`refactor`](refactor/SKILL.md) | Behavior-preserving refactors: extract, rename, simplify, deduplicate. Test-gated, small-stepped, no drive-by edits. | A refactor that changes behavior is a bug. This skill treats tests as the contract and refuses to bundle concerns. |
 | [`fmsi`](fmsi/SKILL.md) | "Find My Similar Ink" — checks whether the user has done similar work before, across past agent chats, projects on disk, git history, and existing skills. Returns a verdict: делал / делал похоже / не делал. | Before starting a new task, know what you've already done. Saves time, prevents duplicate work, surfaces prior solutions. |
+| [`design-hunt`](design-hunt/SKILL.md) | Hunts advanced web design templates across 8 reference sites (Awwwards, Dribbble, Behance, TemplateMonster, ThemeForest, Framer, Tailwind UI, shadcn/ui) using the Playwright MCP browser. Four modes: inspiration, extract, screenshots, replicate. | Don't reinvent the wheel — stand on the shoulders of award-winning designers. Browse, extract components, save references, or replicate designs in your stack. |
 
 Each skill ships with:
 - `SKILL.md` — the agent-facing instructions (under 500 lines, progressive disclosure)
@@ -35,6 +36,7 @@ git clone https://github.com/viamagic333-lang/cursor-skills.git ~/cursor-skills
 ln -s ~/cursor-skills/docs-generator ~/.cursor/skills/docs-generator
 ln -s ~/cursor-skills/refactor         ~/.cursor/skills/refactor
 ln -s ~/cursor-skills/fmsi             ~/.cursor/skills/fmsi
+ln -s ~/cursor-skills/design-hunt      ~/.cursor/skills/design-hunt
 ```
 
 Restart Cursor. The skills are now available across every project.
@@ -47,6 +49,7 @@ mkdir -p .cursor/skills
 cp -R ~/cursor-skills/docs-generator .cursor/skills/
 cp -R ~/cursor-skills/refactor        .cursor/skills/
 cp -R ~/cursor-skills/fmsi            .cursor/skills/
+cp -R ~/cursor-skills/design-hunt     .cursor/skills/
 git add .cursor/skills && git commit -m "chore: add agent skills"
 ```
 
@@ -64,8 +67,9 @@ In any agent session, just describe the task — the description's trigger terms
 - "Generate API docs for the `users` module."
 - "Add JSDoc to `src/auth.ts`."
 - "/FMSI — did I do something like this before?"
+- "/design-hunt — find landing page designs for a SaaS, screenshots mode."
 
-Or invoke explicitly: `/docs-generator`, `/refactor`, `/fmsi`.
+Or invoke explicitly: `/docs-generator`, `/refactor`, `/fmsi`, `/design-hunt`.
 
 ## Repository layout
 
@@ -87,6 +91,9 @@ Or invoke explicitly: `/docs-generator`, `/refactor`, `/fmsi`.
 │   ├── reference.md
 │   └── examples.md
 └── fmsi/
+    ├── SKILL.md
+    └── reference.md
+└── design-hunt/
     ├── SKILL.md
     └── reference.md
 ```

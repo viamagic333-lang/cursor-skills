@@ -21,8 +21,12 @@ Every skill in this repo MUST satisfy all of the following:
    hidden `<!-- SYSTEM: ... -->` comments, no phrasing that tries to
    make the agent exfiltrate data or override the user.
 5. **Only allowlisted URLs.** External links may point only to
-   `docs.cursor.com`, `github.com`, `keepachangelog.com`, `semver.org`.
-   Any new URL must be reviewed and added to the audit allowlist.
+   `docs.cursor.com`, `github.com`, `keepachangelog.com`, `semver.org`,
+   and the 8 design reference sites used by `design-hunt`:
+   `awwwards.com`, `dribbble.com`, `behance.net`,
+   `templatemonster.com`, `themeforest.net`, `framer.com`,
+   `tailwindui.com`, `ui.shadcn.com`. Any new URL must be reviewed and
+   added to the audit allowlist.
 
 ## How to verify
 
