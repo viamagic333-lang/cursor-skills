@@ -13,6 +13,15 @@ A curated collection of [Cursor Agent Skills](https://docs.cursor.com) I use acr
 | [`fmsi`](fmsi/SKILL.md) | "Find My Similar Ink" — checks whether the user has done similar work before, across past agent chats, projects on disk, git history, and existing skills. Returns a verdict: делал / делал похоже / не делал. | Before starting a new task, know what you've already done. Saves time, prevents duplicate work, surfaces prior solutions. |
 | [`design-hunt`](design-hunt/SKILL.md) | Hunts advanced web design templates across 8 reference sites (Awwwards, Dribbble, Behance, TemplateMonster, ThemeForest, Framer, Tailwind UI, shadcn/ui) using the Playwright MCP browser. Four modes: inspiration, extract, screenshots, replicate. | Don't reinvent the wheel — stand on the shoulders of award-winning designers. Browse, extract components, save references, or replicate designs in your stack. |
 
+## Templates
+
+Reusable starters for new skills and scripts:
+
+- [`templates/skill-template/`](templates/skill-template/SKILL.md) — blank skill (SKILL.md + reference.md + examples.md)
+- [`templates/script-template.sh`](templates/script-template.sh) — blank bash script with arg parsing, help, logging
+
+See [`templates/README.md`](templates/README.md) for usage.
+
 Each skill ships with:
 - `SKILL.md` — the agent-facing instructions (under 500 lines, progressive disclosure)
 - `reference.md` — detailed format templates / refactor catalog
@@ -82,6 +91,13 @@ Or invoke explicitly: `/docs-generator`, `/refactor`, `/fmsi`, `/design-hunt`.
 ├── LICENSE
 ├── scripts/
 │   └── audit.sh
+├── templates/
+│   ├── README.md
+│   ├── script-template.sh
+│   └── skill-template/
+│       ├── SKILL.md
+│       ├── reference.md
+│       └── examples.md
 ├── docs-generator/
 │   ├── SKILL.md
 │   ├── reference.md
@@ -90,9 +106,9 @@ Or invoke explicitly: `/docs-generator`, `/refactor`, `/fmsi`, `/design-hunt`.
 │   ├── SKILL.md
 │   ├── reference.md
 │   └── examples.md
-└── fmsi/
-    ├── SKILL.md
-    └── reference.md
+├── fmsi/
+│   ├── SKILL.md
+│   └── reference.md
 └── design-hunt/
     ├── SKILL.md
     └── reference.md

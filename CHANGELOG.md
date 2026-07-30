@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-07-30
+
+### Added
+- `templates/` folder with reusable starters:
+  - `skill-template/` — blank skill (SKILL.md + reference.md + examples.md)
+  - `script-template.sh` — blank bash script with arg parsing, help, logging
+  - `README.md` — usage instructions for both templates
+- README updated with templates section and updated repo layout.
+
 ## [0.3.0] - 2026-07-30
 
 ### Added
@@ -56,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `LICENSE` (MIT).
 - `.gitignore`.
 
-[Unreleased]: https://github.com/viamagic333-lang/cursor-skills/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/viamagic333-lang/cursor-skills/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.4.0
 [0.3.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.3.0
 [0.2.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.2.0
 [0.1.0]: https://github.com/viamagic333-lang/cursor-skills/releases/tag/v0.1.0
