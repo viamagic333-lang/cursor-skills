@@ -100,6 +100,11 @@ Module map (one sentence each), data flow, key invariants, where to look for X.
 - "See documentation" links that point nowhere.
 - Generating docs for code you haven't actually opened in this session.
 
+## Additional resources
+
+- For complete format templates (REST, CLI, JSDoc tags, NumPy style, changelog), see [reference.md](reference.md).
+- For before/after examples, see [examples.md](examples.md).
+
 ## Verification checklist
 
 Before finishing, confirm:

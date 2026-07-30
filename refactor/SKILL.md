@@ -79,6 +79,11 @@ doing the same thing from the user's perspective.
   test first.
 - Leaving the suite red at any point.
 
+## Additional resources
+
+- For the full catalog of refactor patterns with code shapes, see [reference.md](reference.md).
+- For before/after examples with the test discipline called out, see [examples.md](examples.md).
+
 ## Verification checklist
 
 Before declaring done:
